@@ -6,8 +6,7 @@ if(!file_exists('users/'.$_SESSION['username'].'.xml')){
 }
 ?>
 <html>
-    <head>
-        
+    <head>       
     </head>
     <body>
         <h1>User Page</h1>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+    <listitem>
+        <hyperlink>
+            <url>http://www.facebook.com</url>
+            <name>Facebook</name>
+            <target>_blank</target>
+        </hyperlink>
+    </listitem>
+    <listitem>
+        <hyperlink>
+            <url>http://www.twitter.com</url>
+            <name>Twitter</name>
+            <target>_blank</target>
+        </hyperlink>
+    </listitem>
+    <listitem>
+        <hyperlink>
+            <url>http://www.instagram.com</url>
+            <name>Instagram</name>
+            <target>_blank</target>
+        </hyperlink>
+    </listitem>  
+</list>

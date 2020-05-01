@@ -1,16 +1,21 @@
 <?php
-
 $msg="";
+$x=rand(1,9999999999);
 if(isset($_POST['upload'])){
 $target="./images/". md5(uniqid(time())). basename($_FILES['image']['name']);
    $title=$_POST['title'];
    $overview=$_POST['overview'];
 $xml=simplexml_load_file('article/articledata.xml');
 $date=$xml->addChild('date');
+$date->addChild('id',$x);
 $date->addChild('title',$title);
 $date->addChild('overview',$overview);
 $date->addChild('image',$target);
-
+$date->addChild('view','viewarticle.php?id='.$x);
+$date->addChild('edit','editarticle.php?id='.$x);
+$date->addChild('delete','php/deletearticle.php?id='.$x);
+$date->addChild('confirm','return confirm("Are you sure you want to delete this item?")');
+$date->addChild('back','index.php');
 
 file_put_contents('article/articledata.xml', $xml->asXML());
 if(move_uploaded_file($_FILES['image']['tmp_name'],$target)){
@@ -58,8 +63,7 @@ if(move_uploaded_file($_FILES['image']['tmp_name'],$target)){
                 <div class="form-label-group">
                     <input type="text" class="form-control" placeholder="Title" name="title" required autofocus>
                     <label for="inputUsername">Title</label>
-                </div>
-                <input type="hidden" name="size" value="1000000">              
+                </div>          
                 
                 <div class="form-label-group">
                     <textarea type="text" class="form-control" placeholder="Overview" name="overview" rows="4" cols="40" required autofocus></textarea>
@@ -85,40 +89,6 @@ if(move_uploaded_file($_FILES['image']['tmp_name'],$target)){
                 <button class="file-upload-btn" type="submit" name="upload" >Submit</button>
                 <p class="mt-5 mb-3 text-muted text-center">&copy; Galbinita Sebastian 2020</p>
             </form>                            
-<script>
-function readURL(input) {
-  if (input.files && input.files[0]) {
-
-    var reader = new FileReader();
-
-    reader.onload = function(e) {
-      $('.image-upload-wrap').hide();
-
-      $('.file-upload-image').attr('src', e.target.result);
-      $('.file-upload-content').show();
-
-      $('.image-title').html(input.files[0].name);
-    };
-
-    reader.readAsDataURL(input.files[0]);
-
-  } else {
-    removeUpload();
-  }
-}
-
-function removeUpload() {
-  $('.file-upload-input').replaceWith($('.file-upload-input').clone());
-  $('.file-upload-content').hide();
-  $('.image-upload-wrap').show();
-}
-$('.image-upload-wrap').bind('dragover', function () {
-		$('.image-upload-wrap').addClass('image-dropping');
-	});
-	$('.image-upload-wrap').bind('dragleave', function () {
-		$('.image-upload-wrap').removeClass('image-dropping');
-});
-    
-    </script>
+<script type="text/javascript" src="javascript/addimagebutton.js"></script>
     </body>
 </html>
