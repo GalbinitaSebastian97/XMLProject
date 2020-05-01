@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT root (date)+>
+<!ATTLIST root
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT date (id,title,overview,image,view,edit,delete,confirm,back)>
+<!ATTLIST date
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT id (#PCDATA)>
+<!ATTLIST id
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT title (#PCDATA)>
+<!ATTLIST title
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT overview (#PCDATA)>
+<!ATTLIST overview
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT image (#PCDATA)>
+<!ATTLIST image
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT view (#PCDATA)>
+<!ATTLIST view
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT edit (#PCDATA)>
+<!ATTLIST edit
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT delete (#PCDATA)>
+<!ATTLIST delete
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT confirm (#PCDATA)>
+<!ATTLIST confirm
+  xmlns CDATA #FIXED ''>
+
+<!ELEMENT back (#PCDATA)>
+<!ATTLIST back
+  xmlns CDATA #FIXED ''>
+
